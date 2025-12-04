@@ -1,0 +1,330 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Página Web STYL</title>
+  <style>
+    :root {
+      --gradient: linear-gradient(to bottom, #030659, #0c379d); /* Azul oscuro → Rojo oscuro */
+      --radius: 14px;
+      --gap: 20px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--gradient);
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+
+   
+/* HEADER */
+header.wire {
+  width: 100%;
+  background: linear-gradient(to right, #050c57c0, #25519dc0); /* Azul oscuro → Rojo oscuro */
+  text-align: center;
+  padding: 30px 20px;
+}
+
+    
+
+.logo {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #b4b4b4, #055e6d); /* Azul → Rojo */
+  background-clip: text; /* Propiedad estándar */
+  -webkit-background-clip: text; /* Para navegadores WebKit */
+  -webkit-text-fill-color: transparent; /* Hace que el texto tome el degradado */
+}
+
+
+    /* NAV */
+    nav.small {
+      margin-top: 15px;
+    }
+    nav.small a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    nav.small a:hover {
+      color: #ffcccc;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    .wrap {
+      width: 100%;
+      padding: 30px;
+    }
+
+    /* BANNER */
+    .banner {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: var(--gap);
+      margin-bottom: 40px;
+    }
+    .banner .card {
+      background: var(--gradient);
+      padding: 40px;
+      border-radius: var(--radius);
+      font-size: 1.2rem;
+    }
+    .hero h1 { font-size: 2.2rem; margin-bottom: 15px; }
+    .hero p { margin-bottom: 20px; font-size: 1.1rem; }
+    .hero .cta {
+      display: inline-block;
+      padding: 14px 20px;
+      border-radius: 10px;
+      background: #fff;
+      color: #800000;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+    .hero-art {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient);
+      border-radius: var(--radius);
+      font-size: 1.5rem;
+      height: 300px;
+    }
+
+    /* SECCIONES */
+    .section {
+      margin-bottom: 40px;
+    }
+    .section .header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+    }
+    .grid {
+      display: grid;
+      gap: var(--gap);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .card {
+      background: var(--gradient);
+      padding: 30px;
+      border-radius: var(--radius);
+      font-size: 1.1rem;
+    }
+    .thumb {
+      height: 150px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    /* FILTROS Y LISTA */
+    .layout {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: var(--gap);
+    }
+    .filter-list button {
+      display: block;
+      width: 100%;
+      margin-bottom: 12px;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      background: #fff;
+      color: #800000;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .search {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .search input {
+      flex: 1;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+    }
+    .btn {
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: none;
+      background: #fff;
+      color: #800000;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* DETALLE */
+    .detail {
+      position: fixed;
+      right: 30px;
+      bottom: 30px;
+      width: 400px;
+      background: var(--gradient);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: none;
+      font-size: 1.1rem;
+    }
+    .detail.active { display: block; }
+
+    /* FOOTER */
+    footer.site {
+      text-align: center;
+      padding: 30px;
+      background: #000;
+      font-size: 1.1rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width:1000px){
+      .banner{grid-template-columns:1fr}
+      .layout{grid-template-columns:1fr}
+    }
+    @media (max-width:480px){
+      nav.small a{display:block;margin:10px 0;}
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="wire">
+    <div class="logo">GAMES-STYL <p> &#127918;</p></div>
+    <nav class="small">
+      <a href</a>
+      #Juegos</a>
+      <aerfilPerfil</a>
+      #Login</a>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="wrap">
+    <!-- BANNER -->
+    <section class="banner">
+      <div class="card hero">
+        <h1>Bienvenido a la Web de Juegos</h1>
+        <p>Explora los títulos, revisa puntuaciones y accede desde cualquier dispositivo.</p>
+        #juegosVer juegos</a>
+      </div>
+      <div class="hero-art card">IMAGEN / SLIDER</div>
+    </section>
+
+    <!-- POPULARES -->
+    <section class="section">
+      <div class="header">
+        <h2>Juegos populares</h2>
+        <div>Mostrando 4</div>
+      </div>
+      <div class="grid">
+        <div class="card"><div class="thumb">Juego 1</div><strong>Juego 1</strong><div>Acción</div></div>
+        <div class="card"><div class="thumb">Juego 2</div><strong>Juego 2</strong><div>Carreras</div></div>
+        <div class="card"><div class="thumb">Juego 3</div><strong>Juego 3</strong><div>Arcade</div></div>
+        <div class="card"><div class="thumb">Juego 4</div><strong>Juego 4</strong><div>Puzzle</div></div>
+      </div>
+    </section>
+
+    <!-- LISTA -->
+    <section class="section layout" id="juegos">
+      <aside class="filters">
+        <div class="card">
+          <h3>Categorías</h3>
+          <div class="filter-list">
+            <button>Acción</button>
+            <button>Carreras</button>
+            <button>Arcade</button>
+            <button>Deportes</button>
+            <button>Otros</button>
+          </div>
+        </div>
+      </aside>
+      <div class="card">
+        <div class="search">
+          <input id="searchInput" placeholder="Buscar juegos..." />
+          <button class="btn" onclick="filterList()">Buscar</button>
+          <button class="btn">Nuevo</button>
+        </div>
+        <div id="gamesList">
+          <div style="display:grid; gap:20px">
+            <div class="card list-item" style="display:flex; gap:20px; align-items:center">
+              <div class="thumb" style="width:120px; height:90px">A</div>
+              <div style="flex:1"><strong>Juego A</strong><div>Acción · 1 jugador</div></div>
+              <div style="display:flex; gap:12px"><button class="btn" onclick="openDetail('Juego A')">Jugar</button><button class="btn" onclick="openDetail('Juego A')">Info</button></div>
+            </div>
+            <div class="card list-item" style="display:flex; gap:20px; align-items:center">
+              <div class="thumb" style="width:120px; height:90px">B</div>
+              <div style="flex:1"><strong>Juego B</strong><div>Carreras · Multijugador</div></div>
+              <div style="display:flex; gap:12px"><button class="btn" onclick="openDetail('Juego B')">Jugar</button><button class="btn" onclick="openDetail('Juego B')">Info</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOVEDADES -->
+    <section class="section">
+      <div class="header">
+        <h2>Novedades</h2>
+        <div>Últimos lanzamientos</div>
+      </div>
+      <div class="grid">
+        <div class="card"><div class="thumb">Tarjeta 1</div><strong>Tarjeta 1</strong><div>Imagen + título + botón</div></div>
+        <div class="card"><div class="thumb">Tarjeta 2</div><strong>Tarjeta 2</strong><div>Imagen + título + botón</div></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site">
+    © 2025 Proyecto Juegos · Contacto · Redes sociales
+  </footer>
+
+  <!-- DETALLE -->
+  <div class="detail" id="detailPanel">
+    <div class="thumb" id="detailThumb">X</div>
+    <h3 id="detailTitle">Título</h3>
+    <p id="detailGenre">Género • Info</p>
+    <p id="detailDesc">Descripción breve del juego.</p>
+    <div style="display:flex; gap:12px; margin-top:10px"><button class="btn">Jugar ahora</button><button class="btn" onclick="closeDetail()">Cerrar</button></div>
+  </div>
+
+  <script>
+    function openDetail(name){
+      const panel = document.getElementById('detailPanel');
+      document.getElementById('detailTitle').innerText = name;
+      document.getElementById('detailGenre').innerText = 'Género • 1 jugador';
+      document.getElementById('detailDesc').innerText = 'Descripción breve de ' + name + '. Controles / requisitos.';
+      document.getElementById('detailThumb').innerText = name.charAt(0);
+      panel.classList.add('active');
+    }
+    function closeDetail(){
+      document.getElementById('detailPanel').classList.remove('active');
+    }
+    function filterList(){
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      const items = document.querySelectorAll('#gamesList .list-item');
+      items.forEach(it=>{
+        const title = (it.querySelector('strong')||{innerText:''}).innerText.toLowerCase();
+        it.style.display = title.includes(q) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

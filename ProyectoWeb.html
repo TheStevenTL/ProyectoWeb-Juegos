@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Página Web STYL</title>
+
+  <!-- ENLACE AL CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="marco">
+    <div class="logo">GAMES-STYL <p> 🎮</p></div>
+    <nav class="pequeño">
+      <a onclick="irJuegos()">Juegos</a>
+      <a onclick="irPerfil()">Perfil</a>
+      <a onclick="irIniciarSesion()">Iniciar Sesion</a>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="envoltura">
+
+    <!-- BANNER -->
+    <section class="banner">
+      <div class="tarjeta principal">
+        <h1>Bienvenido a la Web de Juegos</h1>
+        <p>Explora los títulos, revisa puntuaciones y accede desde cualquier dispositivo.</p>
+      </div>
+    </section>
+
+    <!-- POPULARES -->
+    <section class="seccion">
+      <div class="encabezado">
+        <h2>Juegos populares</h2>
+        <div>Mostrando 4</div>
+      </div>
+      <div class="rejilla">
+        <div class="tarjeta"><div class="miniatura">Juego 1</div><strong>Juego 1</strong><div>Acción</div></div>
+        <div class="tarjeta"><div class="miniatura">Juego 2</div><strong>Juego 2</strong><div>Carreras</div></div>
+        <div class="tarjeta"><div class="miniatura">Juego 3</div><strong>Juego 3</strong><div>Arcade</div></div>
+        <div class="tarjeta"><div class="miniatura">Juego 4</div><strong>Juego 4</strong><div>Puzzle</div></div>
+      </div>
+    </section>
+
+    <!-- LISTA -->
+    <section class="seccion diseño" id="listaJuegos">
+      <aside class="filtros">
+        <div class="tarjeta">
+          <h3>Categorías</h3>
+          <div class="lista-filtros">
+            <button>Acción</button>
+            <button>Carreras</button>
+            <button>Arcade</button>
+            <button>Deportes</button>
+            <button>Otros</button>
+          </div>
+        </div>
+      </aside>
+
+      <div class="tarjeta">
+        <div class="buscador">
+          <input id="entradaBusqueda" placeholder="Buscar juegos..." />
+          <button class="boton" onclick="filtrarLista()">Buscar</button>
+          <button class="boton">Nuevo</button>
+        </div>
+
+        <div id="listaJuegosContenedor">
+          <div style="display:grid; gap:20px">
+            <div class="tarjeta elemento-lista" style="display:flex; gap:20px; align-items:center">
+              <div class="miniatura" style="width:120px; height:90px">A</div>
+              <div style="flex:1"><strong>Juego A</strong><div>Acción · 1 jugador</div></div>
+              <div style="display:flex; gap:12px">
+                <button class="boton" onclick="abrirDetalle('Juego A')">Info</button>
+              </div>
+            </div>
+
+            <div class="tarjeta elemento-lista" style="display:flex; gap:20px; align-items:center">
+              <div class="miniatura" style="width:120px; height:90px">B</div>
+              <div style="flex:1"><strong>Juego B</strong><div>Carreras · Multijugador</div></div>
+              <div style="display:flex; gap:12px">               
+                <button class="boton" onclick="abrirDetalle('Juego B')">Info</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOVEDADES -->
+    <section class="seccion">
+      <div class="encabezado">
+        <h2>Novedades</h2>
+        <div>Últimos lanzamientos</div>
+      </div>
+      <div class="rejilla">
+        <div class="tarjeta"><div class="miniatura">Tarjeta 1</div><strong>Tarjeta 1</strong><div>Imagen + título + botón</div></div>
+        <div class="tarjeta"><div class="miniatura">Tarjeta 2</div><strong>Tarjeta 2</strong><div>Imagen + título + botón</div></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie">
+    © 2025 Proyecto Juegos · Contacto · Redes sociales
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/app.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>

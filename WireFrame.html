@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wireframe Figma - Proyecto Juegos</title>
+  <style>
+    /* Paleta muy neutra para estilo "Figma": cajas, bordes y etiquetas */
+    :root{
+      --bg:#f5f7fb; --card:#ffffff; --muted:#7a8694; --accent:#1f7a8c;
+      --shadow: 0 8px 24px rgba(20,30,40,0.08);
+      --radius:12px; --gap:16px; --container:1100px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; background:var(--bg); font-family:Inter, system-ui, -apple-system, Arial; color:#1b2530}
+    .wrap{max-width:var(--container); margin:28px auto; padding:20px}
+
+    /* ===== HEADER ===== */
+    header.wire{display:flex; align-items:center; justify-content:space-between; gap:12px; background:var(--card); padding:14px 18px; border-radius:10px; box-shadow:var(--shadow)}
+    .logo{font-weight:700; color:var(--accent)}
+    nav.small{display:flex; gap:14px}
+    nav.small a{color:var(--muted); text-decoration:none; font-weight:600; font-size:0.95rem}
+    .note{font-size:12px; color:var(--muted)}
+
+    /* ===== BANNER ===== */
+    .banner{display:grid; grid-template-columns:1fr 320px; gap:20px; margin-top:18px}
+    .banner .card{background:linear-gradient(180deg,#fff,#fbfeff); padding:22px; border-radius:var(--radius); box-shadow:var(--shadow)}
+    .banner .hero{display:flex; flex-direction:column; justify-content:center}
+    .hero h1{margin:0 0 6px 0; font-size:1.6rem}
+    .hero p{margin:0; color:var(--muted)}
+    .hero .cta{display:inline-block; margin-top:12px; padding:10px 14px; border-radius:10px; background:var(--accent); color:#fff; text-decoration:none}
+    .hero-art{display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#e5f6fb,#fff); border-radius:10px; color:var(--accent); font-weight:700}
+
+    /* ===== SECCIONES ===== */
+    .section{margin-top:18px}
+    .section .header{display:flex; align-items:center; justify-content:space-between; margin-bottom:12px}
+    .grid{display:grid; gap:var(--gap); grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+    .card{background:var(--card); padding:12px; border-radius:10px; box-shadow:0 6px 18px rgba(20,30,40,0.04); border:1px solid rgba(10,20,30,0.03)}
+    .thumb{height:110px; border-radius:8px; background:linear-gradient(135deg,#eaf8fb,#eef5ff); display:flex; align-items:center; justify-content:center; font-weight:800; color:var(--accent)}
+    .meta{display:flex; justify-content:space-between; align-items:center; margin-top:10px}
+    .muted{color:var(--muted); font-size:0.95rem}
+
+    /* ===== LAYOUT LISTA + FILTROS ===== */
+    .layout{display:grid; grid-template-columns:240px 1fr; gap:20px; margin-top:12px}
+    .filters{position:sticky; top:22px}
+    .filters .box{padding:12px}
+    .filter-list button{display:block; width:100%; margin-bottom:8px; padding:10px; border-radius:8px; border:1px dashed #e2e8ef; background:transparent; text-align:left; cursor:pointer}
+
+    .search{display:flex; gap:8px; margin-bottom:12px}
+    .search input{flex:1; padding:10px; border-radius:8px; border:1px solid #e6eef5}
+    .btn{padding:9px 12px; border-radius:8px; border:none; background:#fff; box-shadow:0 2px 8px rgba(10,20,30,0.04)}
+    .btn.primary{background:var(--accent); color:#fff}
+
+    /* ===== DETAIL PANEL (floating) ===== */
+    .detail{position:fixed; right:22px; bottom:22px; width:340px; max-width:calc(100% - 44px); background:var(--card); border-radius:12px; padding:14px; box-shadow:var(--shadow); display:none}
+    .detail.active{display:block}
+
+    /* ===== FOOTER ===== */
+    footer.site{margin-top:22px; text-align:center; color:var(--muted); font-size:0.95rem}
+
+    /* ===== PANTALLAS EXTRA (mocks) ===== */
+    .mock-screen{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    .screen{min-height:120px; display:flex; align-items:center; justify-content:center; font-weight:700}
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width:1000px){
+      .banner{grid-template-columns:1fr}
+      .layout{grid-template-columns:1fr}
+      .filters{position:relative}
+      .mock-screen{grid-template-columns:1fr}
+    }
+
+    @media (max-width:480px){
+      header.wire{flex-direction:column; align-items:flex-start}
+      nav.small{order:2}
+    }
+
+    /* ===== Annotations (estilo Figma) ===== */
+    .annot{font-size:12px; color:#445; background:rgba(255,255,255,0.9); padding:6px 8px; border-radius:8px; border:1px solid rgba(20,30,40,0.04); display:inline-block}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- HEADER -->
+    <header class="wire" aria-label="Header del sitio">
+      <div style="display:flex; gap:14px; align-items:center">
+        <div class="logo">GameStyl</div>
+        <div class="note">Wireframe • Estructura</div>
+      </div>
+      <nav class="small" aria-label="Navegación principal">
+        <a href="#">Inicio</a>
+        <a href="#juegos">Juegos</a>
+        <a href="#perfil">Perfil</a>
+        <a href="#login">Login</a>
+      </nav>
+    </header>
+
+    <!-- BANNER -->
+    <section class="banner" aria-label="Banner principal">
+      <div class="card hero">
+        <h1>Bienvenido a la Web de Juegos</h1>
+        <p class="muted">Explora los títulos, revisa puntuaciones y accede desde cualquier dispositivo.</p>
+        <a class="cta" href="#juegos">Ver juegos</a>
+        <div style="margin-top:12px" class="annot">Nota: Banner con slider o imagen grande</div>
+      </div>
+      <div class="hero-art card" aria-hidden="true">IMAGEN / SLIDER</div>
+    </section>
+
+    <!-- SECCIÓN: Juegos Populares -->
+    <section class="section" aria-labelledby="populares">
+      <div class="header">
+        <h2 id="populares">Juegos populares</h2>
+        <div class="muted">Mostrando 4</div>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="thumb">Juego 1</div>
+          <div class="meta"><strong>Juego 1</strong><span class="muted">Acción</span></div>
+        </div>
+        <div class="card">
+          <div class="thumb">Juego 2</div>
+          <div class="meta"><strong>Juego 2</strong><span class="muted">Carreras</span></div>
+        </div>
+        <div class="card">
+          <div class="thumb">Juego 3</div>
+          <div class="meta"><strong>Juego 3</strong><span class="muted">Arcade</span></div>
+        </div>
+        <div class="card">
+          <div class="thumb">Juego 4</div>
+          <div class="meta"><strong>Juego 4</strong><span class="muted">Puzzle</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORÍAS + LISTA DE JUEGOS -->
+    <section class="section layout" id="juegos">
+      <aside class="filters" aria-label="Filtros de búsqueda">
+        <div class="card">
+          <h3>Categorías</h3>
+          <div class="filter-list">
+            <button>Acción</button>
+            <button>Carreras</button>
+            <button>Arcade</button>
+            <button>Deportes</button>
+            <button>Otros</button>
+          </div>
+          <div style="margin-top:10px" class="annot">Filtro lateral (sticky en escritorio)</div>
+        </div>
+      </aside>
+
+      <main>
+        <div class="card">
+          <div class="search">
+            <input id="searchInput" placeholder="Buscar juegos..." />
+            <button class="btn" onclick="filterList()">Buscar</button>
+            <button class="btn primary">Nuevo</button>
+          </div>
+
+          <div id="gamesList">
+            <div style="display:grid; gap:10px">
+              <div class="card list-item" style="display:flex; gap:12px; align-items:center">
+                <div class="thumb" style="width:100px; height:70px">A</div>
+                <div style="flex:1"><strong>Juego A</strong><div class="muted">Acción · 1 jugador</div></div>
+                <div style="display:flex; gap:8px"><button class="btn primary" onclick="openDetail('Juego A')">Jugar</button><button class="btn" onclick="openDetail('Juego A')">Info</button></div>
+              </div>
+
+              <div class="card list-item" style="display:flex; gap:12px; align-items:center">
+                <div class="thumb" style="width:100px; height:70px">B</div>
+                <div style="flex:1"><strong>Juego B</strong><div class="muted">Carreras · Multijugador</div></div>
+                <div style="display:flex; gap:8px"><button class="btn primary" onclick="openDetail('Juego B')">Jugar</button><button class="btn" onclick="openDetail('Juego B')">Info</button></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <!-- ÚLTIMAS NOVEDADES -->
+    <section class="section">
+      <div class="header">
+        <h2>Novedades</h2>
+        <div class="muted">Últimos lanzamientos</div>
+      </div>
+      <div class="grid">
+        <div class="card"><div class="thumb">Tarjeta 1</div><div class="meta"><strong>Tarjeta 1</strong><span class="muted">Imagen + título + botón</span></div></div>
+        <div class="card"><div class="thumb">Tarjeta 2</div><div class="meta"><strong>Tarjeta 2</strong><span class="muted">Imagen + título + botón</span></div></div>
+      </div>
+    </section>
+
+    
+    <!-- FOOTER -->
+    <footer class="site">
+      <div class="annot">© 2025 Proyecto Juegos · Contacto · Redes sociales</div>
+    </footer>
+
+    <!-- DETALLE FLOTANTE -->
+    <div class="detail" id="detailPanel" role="dialog" aria-hidden="true">
+      <div class="thumb" id="detailThumb">X</div>
+      <h3 id="detailTitle">Título</h3>
+      <p class="muted" id="detailGenre">Género • Info</p>
+      <p class="muted" id="detailDesc">Descripción breve del juego. Aquí va una explicación corta.</p>
+      <div style="display:flex; gap:8px; margin-top:10px"><button class="btn primary">Jugar ahora</button><button class="btn" onclick="closeDetail()">Cerrar</button></div>
+    </div>
+
+  </div>
+
+  <script>
+    function openDetail(name){
+      const panel = document.getElementById('detailPanel');
+      document.getElementById('detailTitle').innerText = name;
+      document.getElementById('detailGenre').innerText = 'Género • 1 jugador';
+      document.getElementById('detailDesc').innerText = 'Descripción breve de ' + name + '. Controles / requisitos.';
+      document.getElementById('detailThumb').innerText = name.charAt(0);
+      panel.classList.add('active');
+      panel.setAttribute('aria-hidden','false');
+    }
+    function closeDetail(){
+      const panel = document.getElementById('detailPanel');
+      panel.classList.remove('active');
+      panel.setAttribute('aria-hidden','true');
+    }
+    function filterList(){
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      const items = document.querySelectorAll('#gamesList .list-item');
+      items.forEach(it=>{
+        const title = (it.querySelector('strong')||{innerText:''}).innerText.toLowerCase();
+        it.style.display = title.includes(q) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
