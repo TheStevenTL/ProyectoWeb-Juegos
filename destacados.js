@@ -1,6 +1,3 @@
-// Destacados.js 2025
-
-// TODOS LOS JUEGOS 2025
 const juegos2025Completo = [
     {
         id: 1,
@@ -319,4 +316,5 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarMenu();
     
     console.log('Catálogo 2025 cargado correctamente!');
+
 });
