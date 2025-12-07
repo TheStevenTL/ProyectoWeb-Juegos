@@ -1,6 +1,3 @@
-// Comunidad.js 2025
-
-// Foros sobre juegos 2025
 const foros2025 = [
     {
         id: 1,
@@ -243,4 +240,5 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarMenu();
     
     console.log('Comunidad 2025 cargada correctamente!');
+
 });
