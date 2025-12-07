@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad 2025 - WikiGames</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="contenedor">
+            <div class="logo">
+                <i class="fas fa-gamepad"></i>
+                <span style="color: aqua;">WikiGames<span style="color:#300594">STYL</span></span>
+            </div>
+            
+            <nav class="menu">
+                <a href="PaginaInicio.html"><i class="fas fa-home"></i>INICIO</a>
+                <a href="Destacados.html"><i class="fas fa-fire"></i>DESTACADOS</a>
+                <a href="Comunidad.html" class="activo"><i class="fas fa-users"></i> COMUNIDAD</a>            
+            </nav>
+            
+            <button class="btn-login" id="btnLogin">
+                <i class="fas fa-user"></i> Mi Cuenta
+            </button>
+            
+            <button class="btn-menu" id="btnMenu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="contenedor">
+        <section class="hero">
+            <h1>Comunidad Gaming </h1>
+            <p>Únete a la conversación sobre los juegos del año, sobre tus historias y experiencias sean chistosas o conmovedoras...</p>
+        </section>
+
+        <section class="seccion">
+            <h2><i class="fas fa-comments"></i> Foros Juegos 2025</h2>
+            <div class="foros" id="listaForos">
+            </div>
+        </section>
+
+        <section class="seccion">
+            <h2><i class="fas fa-user-clock"></i> Jugando Ahora</h2>
+            <div class="usuarios-online" id="usuariosOnline">
+
+            </div>
+        </section>
+
+        <!-- Eventos 2025 -->
+        <section class="seccion">
+            <h2><i class="fas fa-calendar-alt"></i> Eventos Gestion 2025</h2>
+            <div class="eventos" id="listaEventos">
+            </div>
+        </section>
+
+        <!-- Crear Hilo -->
+        <section class="seccion">
+            <h2><i class="fas fa-edit"></i> Habla sobre...</h2>
+            <div class="crear-hilo">
+                <input type="text" placeholder="¿Qué juego 2025 te interesa?" id="tituloHilo">
+                <textarea placeholder="Comparte tu opinión sobre los lanzamientos 2025-2026..." id="contenidoHilo" rows="4"></textarea>
+                <button class="btn" id="publicarHilo">Publicar</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contenedor">
+            <p>© 2025 WikiGames - Comunidad especializada en el Gaming</p>
+            <p>DerechosReservados</p>
+            <p>Soporte Técnico torrezlopez456@andohack.com</p>           
+        </div>
+    </footer>
+
+    <!-- Modal de Login -->
+    <div class="modal" id="modalLogin">
+        <div class="modal-contenido">
+            <span class="cerrar" id="cerrarModal">&times;</span>
+            <h3>Iniciar Sesión </h3>
+            <form id="formLogin">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button type="submit" class="btn">Entrar</button>
+                <p class="enlace">¿No tienes cuenta? <a href="#" id="registro">Regístrate</a></p>
+            </form>
+        </div>
+    </div>
+    <div class="modal" id="modalRegistro">
+        <div class="modal-contenido">
+            <span class="cerrar" id="cerrarRegistro">&times;</span>
+            <h3>Crear Cuenta</h3>
+            <form id="formRegistro">
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button type="submit" class="btn">Registrarse</button>
+                <p class="enlace">¿Ya tienes cuenta? <a href="#" id="iniciarSesion">Iniciar Sesión</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="comunidad.js"></script>
+</body>
+</html>
