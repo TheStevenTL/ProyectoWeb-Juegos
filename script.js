@@ -1,4 +1,3 @@
-
 const juegos2025 = [
     {
         id: 1,
@@ -246,4 +245,5 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarBusqueda();
     
     console.log('WikiJuegos 2025 cargado correctamente!');
+
 });
