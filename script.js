@@ -1,8 +1,9 @@
+
 const juegos2025 = [
     {
         id: 1,
         nombre: "GTA VI",
-        imagen: "images/gta6.jpg",
+        imagen: "gta6.jpg",
         descripcion: "La nueva entrega de Rockstar. Regreso a Vice City con gráficos de nueva generación.",
         rating: 4.9,
         fecha: "Q4 2025",
@@ -11,7 +12,7 @@ const juegos2025 = [
     {
         id: 2,
         nombre: "The Elder Scrolls VI",
-        imagen: "images/elder-scrolls.jpg",
+        imagen: "elder-scrolls.jpg",
         descripcion: "Nuevo RPG de mundo abierto de Bethesda. Continúa la legendaria saga.",
         rating: 4.8,
         fecha: "2025-2026",
@@ -20,7 +21,7 @@ const juegos2025 = [
     {
         id: 3,
         nombre: "Star Wars: Eclipse",
-        imagen: "images/star-wars-eclipse.jpg",
+        imagen: "star-wars-eclipse.jpg",
         descripcion: "Aventura narrativa en la Alta República. Desarrollado por Quantic Dream.",
         rating: 4.7,
         fecha: "2025",
@@ -29,7 +30,7 @@ const juegos2025 = [
     {
         id: 4,
         nombre: "Fable (2025)",
-        imagen: "images/Fable.jpg",
+        imagen: "Fable.jpg",
         descripcion: "Reinicio de la serie de fantasía. Humor británico y mundo vivo.",
         rating: 4.6,
         fecha: "2025",
@@ -38,7 +39,7 @@ const juegos2025 = [
     {
         id: 5,
         nombre: "Marvel's Wolverine",
-        imagen: "images/marvelswolverine.jpg",
+        imagen: "marvelswolverine.jpg",
         descripcion: "Juego en solitario del mutante. Brutal y visceral por Insomniac.",
         rating: 4.8,
         fecha: "2025",
@@ -47,7 +48,7 @@ const juegos2025 = [
     {
         id: 6,
         nombre: "Expedition 33",
-        imagen: "images/expedition33.jpg",
+        imagen: "expedition33.jpg",
         descripcion: "RPG basado en turnos de vanguardia con mecánica única en tiempo real",
         rating: 4.7,
         fecha: "2025",
@@ -56,7 +57,7 @@ const juegos2025 = [
     {
         id: 7,
         nombre: "Avowed",
-        imagen: "images/Avowed.jpg",
+        imagen: "Avowed.jpg",
         descripcion: "RPG de primera persona en el universo de Pillars of Eternity.",
         rating: 4.5,
         fecha: "2025",
@@ -65,7 +66,7 @@ const juegos2025 = [
     {
         id: 8,
         nombre: "FIFA 25",
-        imagen: "images/Fifa2025.jpg",
+        imagen: "Fifa2025.jpg",
         descripcion: "Nueva edición del simulador de fútbol con mejoras en física.",
         rating: 4.3,
         fecha: "Sept 2025",
@@ -247,3 +248,4 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('WikiJuegos 2025 cargado correctamente!');
 
 });
+
