@@ -1,8 +1,9 @@
+
 const juegos2025Completo = [
     {
         id: 1,
         nombre: "GTA VI",
-        imagen: "images/gta6.jpg",
+        imagen: "gta6.jpg",
         descripcion: "Rockstar regresa con nueva entrega. Vice City renovado.",
         rating: 4.9,
         categoria: "accion",
@@ -11,7 +12,7 @@ const juegos2025Completo = [
     {
         id: 2,
         nombre: "The Elder Scrolls VI",
-        imagen: "images/elder-scrolls.jpg",
+        imagen: "elder-scrolls.jpg",
         descripcion: "Nuevo RPG de Bethesda. Nuevo continente, nuevas razas.",
         rating: 4.8,
         categoria: "rpg",
@@ -20,7 +21,7 @@ const juegos2025Completo = [
     {
         id: 3,
         nombre: "Star Wars: Eclipse",
-        imagen: "images/star-wars-eclipse.jpg",
+        imagen: "star-wars-eclipse.jpg",
         descripcion: "Aventura en Alta República. Elecciones con consecuencias.",
         rating: 4.7,
         categoria: "aventura",
@@ -29,7 +30,7 @@ const juegos2025Completo = [
     {
         id: 4,
         nombre: "Fable (2025)",
-        imagen: "images/Fable.jpg",
+        imagen: "Fable.jpg",
         descripcion: "Reinicio con humor británico. Sistema de moralidad profundo.",
         rating: 4.6,
         categoria: "rpg",
@@ -38,7 +39,7 @@ const juegos2025Completo = [
     {
         id: 5,
         nombre: "Marvel's Wolverine",
-        imagen: "images/marvelswolverine.jpg",
+        imagen: "marvelswolverine.jpg",
         descripcion: "Juego maduro del mutante. Combates brutales.",
         rating: 4.8,
         categoria: "accion",
@@ -47,7 +48,7 @@ const juegos2025Completo = [
     {
         id: 6,
         nombre: "Expedition 33",
-        imagen: "images/expedition33.jpg",
+        imagen: "expedition33.jpg",
         descripcion: "RPG basado en turnos de vanguardia con mecánica única en tiempo real.",
         rating: 4.7,
         categoria: "rpg",
@@ -56,7 +57,7 @@ const juegos2025Completo = [
     {
         id: 7,
         nombre: "Avowed",
-        imagen: "images/Avowed.jpg",
+        imagen: "Avowed.jpg",
         descripcion: "RPG de Obsidian. Magia y espadas en primera persona.",
         rating: 4.5,
         categoria: "rpg",
@@ -65,7 +66,7 @@ const juegos2025Completo = [
     {
         id: 8,
         nombre: "FIFA 25",
-        imagen: "images/Fifa2025.jpg",
+        imagen: "Fifa2025.jpg",
         descripcion: "Nuevo motor gráfico. Mejoras en IA y física.",
         rating: 4.3,
         categoria: "deportes",
@@ -74,7 +75,7 @@ const juegos2025Completo = [
     {
         id: 9,
         nombre: "Call of Duty Black ops 7",
-        imagen: "images/CallofDuty.jpg",
+        imagen: "CallofDuty.jpg",
         descripcion: "Nueva entrega anual. Campaña y multijugador renovados.",
         rating: 4.4,
         categoria: "accion",
@@ -83,7 +84,7 @@ const juegos2025Completo = [
     {
         id: 10,
         nombre: "Assassin's Creed Red",
-        imagen: "images/Assasins.jpg",
+        imagen: "Assasins.jpg",
         descripcion: "Ambientado en Japón feudal. Sistema de sigilo mejorado.",
         rating: 4.6,
         categoria: "aventura",
@@ -92,7 +93,7 @@ const juegos2025Completo = [
     {
         id: 11,
         nombre: "Hellblade II: Senua's Saga",
-        imagen: "images/Hellblade.jpg",
+        imagen: "Hellblade.jpg",
         descripcion: "Secuela psicológica. Gráficos de nueva generación.",
         rating: 4.7,
         categoria: "aventura",
@@ -101,13 +102,14 @@ const juegos2025Completo = [
     {
         id: 12,
         nombre: "NBA 2K25",
-        imagen: "images/NBA2025.jpg",
+        imagen: "NBA2025.jpg",
         descripcion: "Nueva edición del simulador de baloncesto.",
         rating: 4.2,
         categoria: "deportes",
         fecha: "Sep 2025"
     }
 ];
+
 
 // CALENDARIO 2025
 const calendario2025 = [
@@ -318,3 +320,4 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Catálogo 2025 cargado correctamente!');
 
 });
+
