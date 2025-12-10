@@ -39,6 +39,12 @@ header .contenedor {
     gap: 10px;
     font-size: 1.5rem;
     font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo:hover {
+    opacity: 0.8;
 }
 
 .logo i {
@@ -78,6 +84,16 @@ header .contenedor {
 .btn-login:hover, .btn:hover {
     background: #e63e4d;
     transform: translateY(-2px);
+}
+
+/* Estilo para botón cuando hay usuario logueado */
+.btn-login.logueado {
+    background: #4CAF50 !important;
+}
+
+.btn-login.logueado:hover {
+    background: #45a049 !important;
+    transform: none;
 }
 
 .btn-menu {
@@ -323,7 +339,7 @@ header .contenedor {
     color: #aaa;
 }
 
-/* Usuarios Online */
+/* Usuarios Online - SOLO UNA VEZ */
 .usuarios-online {
     display: flex;
     flex-wrap: wrap;
@@ -338,6 +354,9 @@ header .contenedor {
     background: #25253e;
     padding: 12px 20px;
     border-radius: 20px;
+    width: 220px;
+    height: 70px;
+    box-sizing: border-box;
 }
 
 .avatar {
@@ -524,5 +543,9 @@ footer {
     
     .top-juegos {
         grid-template-columns: 1fr;
+    }
+    
+    .usuario-card {
+        width: 100%;
     }
 }
