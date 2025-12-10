@@ -1,4 +1,3 @@
-
 const juegos2025 = [
     {
         id: 1,
@@ -27,14 +26,14 @@ const juegos2025 = [
         fecha: "2025",
         categoria: "aventura"
     },
-    {
+        {
         id: 4,
-        nombre: "Fable (2025)",
-        imagen: "Fable.jpg",
-        descripcion: "Reinicio de la serie de fantasía. Humor británico y mundo vivo.",
-        rating: 4.6,
-        fecha: "2025",
-        categoria: "rpg"
+        nombre: "Resident Evil Requiem",
+        imagen: "RE.jpg",
+        descripcion: "Novena entrega de Franquicia más conocida de capcom vuelve con más terror que antes",
+        rating: 4.8,
+        categoria: "aventura",
+        fecha: "2025"
     },
     {
         id: 5,
@@ -54,15 +53,16 @@ const juegos2025 = [
         fecha: "2025",
         categoria: "rpg"
     },
-    {
+                        {
         id: 7,
-        nombre: "Avowed",
-        imagen: "Avowed.jpg",
-        descripcion: "RPG de primera persona en el universo de Pillars of Eternity.",
-        rating: 4.5,
-        fecha: "2025",
-        categoria: "rpg"
+        nombre: "Lego Batman",
+        imagen: "legobatman.jpg",
+        descripcion: "Aventura lego basada en la triologia original Arkham ",
+        rating: 4.9,
+        categoria: "aventura",
+        fecha: "2025"
     },
+
     {
         id: 8,
         nombre: "FIFA 25",
@@ -106,7 +106,7 @@ function cargarJuegosDestacados() {
     
     contenedor.innerHTML = destacados.map(juego => `
         <div class="juego-card">
-            <img src="${juego.imagen}" alt="${juego.nombre}" class="juego-img">
+            <img src="${juego.imagen}" alt="${juego.nombre}" class="juego-img" onerror="this.src='https://via.placeholder.com/300x150/25253e/ffffff?text=Juego+2025'">
             <div class="juego-info">
                 <h3>${juego.nombre}</h3>
                 <p>${juego.descripcion}</p>
@@ -130,7 +130,7 @@ function cargarNoticias() {
     `).join('');
 }
 
-// Sistema de login
+// Sistema de login MODIFICADO
 function configurarLogin() {
     const btnLogin = document.getElementById('btnLogin');
     const modalLogin = document.getElementById('modalLogin');
@@ -139,6 +139,11 @@ function configurarLogin() {
     const cerrarRegistro = document.getElementById('cerrarRegistro');
     const registroLink = document.getElementById('registro');
     const iniciarSesionLink = document.getElementById('iniciarSesion');
+    
+    // Si ya hay usuario logueado, no mostrar modales
+    if (StorageManager.estaRegistrado()) {
+        return;
+    }
     
     // Abrir modal login
     btnLogin.addEventListener('click', () => {
@@ -177,19 +182,54 @@ function configurarLogin() {
         }
     });
     
-    // Formularios
-    document.getElementById('formLogin').addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('¡Bienvenido a WikiJuegos 2025!');
-        modalLogin.style.display = 'none';
-        btnLogin.innerHTML = '<i class="fas fa-user-check"></i> Mi Cuenta';
-    });
-    
+    // FORMULARIO DE REGISTRO
     document.getElementById('formRegistro').addEventListener('submit', (e) => {
         e.preventDefault();
-        alert('¡Cuenta creada! Únete a la comunidad 2025.');
+        
+        const nombre = document.querySelector('#formRegistro input[type="text"]').value;
+        const email = document.querySelector('#formRegistro input[type="email"]').value;
+        
+        if (!nombre || !email) {
+            alert('Por favor completa todos los campos');
+            return;
+        }
+        
+        // Guardar usuario en localStorage
+        StorageManager.guardarUsuario(nombre, email);
+        
+        alert(`¡Bienvenido ${nombre}! Tu cuenta ha sido creada.`);
         modalRegistro.style.display = 'none';
-        btnLogin.innerHTML = '<i class="fas fa-user-check"></i> Mi Cuenta';
+        
+        // Actualizar botón con nombre de usuario
+        actualizarBotonUsuario();
+    });
+    
+    // FORMULARIO DE LOGIN (VALIDAR QUE EXISTA REGISTRO)
+    document.getElementById('formLogin').addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const usuario = StorageManager.obtenerUsuario();
+        
+        if (!usuario) {
+            alert('⚠️ Debes registrarte primero antes de iniciar sesión.');
+            modalLogin.style.display = 'none';
+            modalRegistro.style.display = 'flex';
+            return;
+        }
+        
+        const emailInput = document.querySelector('#formLogin input[type="email"]').value;
+        const passwordInput = document.querySelector('#formLogin input[type="password"]').value;
+        
+        // Validar credenciales (simplificado)
+        if (emailInput === usuario.email && passwordInput) {
+            alert(`¡Bienvenido de nuevo ${usuario.nombre}!`);
+            modalLogin.style.display = 'none';
+            
+            // Actualizar botón con nombre
+            actualizarBotonUsuario();
+        } else {
+            alert('Email o contraseña incorrectos');
+        }
     });
 }
 
@@ -245,7 +285,4 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarMenu();
     configurarBusqueda();
     
-    console.log('WikiJuegos 2025 cargado correctamente!');
-
 });
-
