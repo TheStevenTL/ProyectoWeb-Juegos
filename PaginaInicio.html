@@ -11,10 +11,13 @@
 
     <header>
         <div class="contenedor">
-            <div class="logo">
+            <!-- LOGO CLICKEABLE -->
+            <a href="PaginaInicio.html" class="logo" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
                 <i class="fas fa-gamepad"></i>
-                <span style="color: rgb(247, 5, 5);">WikiGames<span style="color:#e0cc12">STYL</span></span></span>
-            </div>
+                <span style="color: rgb(247, 5, 5); font-size: 1.5rem; font-weight: bold;">
+                    WikiGames<span style="color:#e0cc12">STYL</span>
+                </span>
+            </a>
             
             <nav class="menu">
                 <a href="PaginaInicio.html" class="activo"><i class="fas fa-home"></i> INICIO</a>
@@ -25,6 +28,7 @@
             <button class="btn-login" id="btnLogin">
                 <i class="fas fa-user"></i> Mi Cuenta
             </button>
+            
             <button class="btn-menu" id="btnMenu">
                 <i class="fas fa-bars"></i>
             </button>   
@@ -114,7 +118,8 @@
         </div>
     </div>
 
+    <!-- NUEVO: Archivo storage.js -->
+    <script src="storage.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
