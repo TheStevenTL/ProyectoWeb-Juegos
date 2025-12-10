@@ -1,4 +1,3 @@
-
 const juegos2025Completo = [
     {
         id: 1,
@@ -77,7 +76,7 @@ const juegos2025Completo = [
         nombre: "Call of Duty Black ops 7",
         imagen: "CallofDuty.jpg",
         descripcion: "Nueva entrega anual. Campaña y multijugador renovados.",
-        rating: 4.4,
+        rating: 4.3,
         categoria: "accion",
         fecha: "Nov 2025"
     },
@@ -95,7 +94,7 @@ const juegos2025Completo = [
         nombre: "Hellblade II: Senua's Saga",
         imagen: "Hellblade.jpg",
         descripcion: "Secuela psicológica. Gráficos de nueva generación.",
-        rating: 4.7,
+        rating: 4.4,
         categoria: "aventura",
         fecha: "2025"
     },
@@ -107,9 +106,127 @@ const juegos2025Completo = [
         rating: 4.2,
         categoria: "deportes",
         fecha: "Sep 2025"
-    }
-];
+    },
+     {
+        id: 13,
+        nombre: "SPORT FC26",
+        imagen: "FC26.jpg",
+        descripcion: "Nueva edición SPORT FC26 más realista que nunca.",
+        rating: 4.8,
+        categoria: "deportes",
+        fecha: "Enero 2026"
+    },
+    {
+        id: 14,
+        nombre: "Pro Bowling 2026",
+        imagen: "bowling.jpg",
+        descripcion: "Demuestra tu habilidad en el bowling más intenso.",
+        rating: 3.9,
+        categoria: "deportes",
+        fecha: "feb 2026"
+    }, 
+        {
+        id: 15,
+        nombre: "INVINCIBLE VS",
+        imagen: "invincible.jpg",
+        descripcion: "Peleas con los personajes del universo de Invencible.",
+        rating: 4.1,
+        categoria: "accion",
+        fecha: "Enero 2026"
+    },
+           {
+        id: 16,
+        nombre: "MEME WARS",
+        imagen: "memewars.jpg",
+        descripcion: "Peleas divertidas con temática de memes.",
+        rating: 3.6,
+        categoria: "accion",
+        fecha: "Dic 2025"
+    },
+               {
+        id: 17,
+        nombre: "Scott Pilgrim EX",
+        imagen: "ScottP.jpg",
+        descripcion: "Acompaña a Scott Pilgrim a derrotar a los ex malvados de Ramona Flowers.",
+        rating: 4.4,
+        categoria: "accion",
+        fecha: "Dic 2025"
+    },
+                 {
+        id: 18,
+        nombre: "YAKUZA 3 Dark Ties",
+        imagen: "Yakuza.jpg",
+        descripcion: "Peleas callejeras,historias complejas detras de la vida de estos personajes .",
+        rating: 4.4,
+        categoria: "accion",
+        fecha: "Dic 2025"
+    },
+                   {
+        id: 19,
+        nombre: "TERMINATOR 2D War",
+        imagen: "terminator.jpg",
+        descripcion: "Accion en 2d horizontal llena de enemigos por derrotar.",
+        rating: 3.9,
+        categoria: "accion",
+        fecha: "Dic 2025"
+    },
+                       {
+        id: 20,
+        nombre: "MORTAL KOMBAT Legacy Collection",
+        imagen: "mortalkombat.jpg",
+        descripcion: "Accion en 2d horizontal llena de enemigos por derrotar.",
+        rating: 3.9,
+        categoria: "accion",
+        fecha: "Dic 2025"
+    },
+        {
+        id: 21,
+        nombre: "Resident Evil Requiem",
+        imagen: "RE.jpg",
+        descripcion: "Novena entrega de Franquicia más conocida de capcom vuelve con más terror que antes",
+        rating: 4.8,
+        categoria: "aventura",
+        fecha: "2025"
+    },
+            {
+        id: 22,
+        nombre: "Subnautica II",
+        imagen: "subnautica2.jpg",
+        descripcion: "Aventura dentro de los mares más profundos de un planeta desconocido",
+        rating: 4.8,
+        categoria: "aventura",
+        fecha: "2025"
+    },
+                {
+        id: 23,
+        nombre: "PEAK",
+        imagen: "peak.jpg",
+        descripcion: "Escalar,escalar y más escalar aventura llena de emociones ",
+        rating: 4.4,
+        categoria: "aventura",
+        fecha: "2025"
+    },
+                    {
+        id: 24,
+        nombre: "Iron Corbo",
+        imagen: "ironCorbo.jpg",
+        descripcion: "Aventura horizontal y vertical para descubrir misterios increibles ",
+        rating: 4.4,
+        categoria: "aventura",
+        fecha: "2025"
+    },
+                        {
+        id: 25,
+        nombre: "Lego Batman",
+        imagen: "legobatman.jpg",
+        descripcion: "Aventura lego basada en la triologia original Arkham ",
+        rating: 4.9,
+        categoria: "aventura",
+        fecha: "2025"
+    },
 
+
+];
 
 // CALENDARIO 2025
 const calendario2025 = [
@@ -307,6 +424,79 @@ function configurarMenu() {
         });
     }
 }
+// Agregar esto al final de destacados.js (antes del DOMContentLoaded)
+function actualizarBotonUsuario() {
+    const btnLogin = document.getElementById('btnLogin');
+    const usuario = StorageManager.obtenerUsuario();
+    
+    if (btnLogin && usuario) {
+        btnLogin.innerHTML = `<i class="fas fa-user-check"></i> ${usuario.nombre}`;
+        btnLogin.classList.add('logueado');
+        btnLogin.onclick = null;
+        btnLogin.style.cursor = 'default';
+        
+        btnLogin.addEventListener('click', () => {
+            if (confirm(`¿Cerrar sesión de ${usuario.nombre}?`)) {
+                StorageManager.cerrarSesion();
+            }
+        });
+    }
+}
+
+// FORMULARIO DE REGISTRO
+document.getElementById('formRegistro').addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const nombre = document.querySelector('#formRegistro input[type="text"]').value;
+    const email = document.querySelector('#formRegistro input[type="email"]').value;
+    
+    if (!nombre || !email) {
+        alert('Por favor completa todos los campos');
+        return;
+    }
+    
+    // Guardar usuario en localStorage
+    StorageManager.guardarUsuario(nombre, email);
+    
+    alert(`¡Bienvenido ${nombre}! Tu cuenta ha sido creada.`);
+    modalRegistro.style.display = 'none';
+    
+    // Actualizar botón con nombre de usuario
+    actualizarBotonUsuario();
+});
+
+// FORMULARIO DE LOGIN 
+document.getElementById('formLogin').addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const usuario = StorageManager.obtenerUsuario();
+    
+    if (!usuario) {
+        alert('⚠️ Debes registrarte primero antes de iniciar sesión.');
+        modalLogin.style.display = 'none';
+        modalRegistro.style.display = 'flex';
+        return;
+    }
+    
+    const emailInput = document.querySelector('#formLogin input[type="email"]').value;
+    const passwordInput = document.querySelector('#formLogin input[type="password"]').value;
+    
+    // Validar credenciales 
+    if (emailInput === usuario.email && passwordInput) {
+        alert(`¡Bienvenido de nuevo ${usuario.nombre}!`);
+        modalLogin.style.display = 'none';
+        
+        // Actualizar botón con nombre
+        actualizarBotonUsuario();
+    } else {
+        alert('Email o contraseña incorrectos');
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    actualizarBotonUsuario(); 
+});
 
 // Inicializar
 document.addEventListener('DOMContentLoaded', () => {
@@ -317,7 +507,4 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarLogin();
     configurarMenu();
     
-    console.log('Catálogo 2025 cargado correctamente!');
-
 });
-
