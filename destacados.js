@@ -209,7 +209,7 @@ const juegos2025Completo = [
                     {
         id: 24,
         nombre: "Iron Corbo",
-        imagen: "ironCorbo.jpg",
+        imagen: "IronCorbo.jpg",
         descripcion: "Aventura horizontal y vertical para descubrir misterios increibles ",
         rating: 4.4,
         categoria: "aventura",
@@ -508,3 +508,4 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarMenu();
     
 });
+
