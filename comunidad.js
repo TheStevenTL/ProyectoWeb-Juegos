@@ -1,3 +1,4 @@
+
 const foros2025 = [
     {
         id: 1,
@@ -30,6 +31,22 @@ const foros2025 = [
         temas: 1523,
         mensajes: 7892,
         icono: "microchip"
+    },
+        {
+        id: 5,
+        nombre: "Recomendaciones 2025",
+        descripcion: "¿Controla tus horas de juego, aqui te enseñamos?",
+        temas: 1523,
+        mensajes: 7892,
+        icono: "calendar"
+    },
+            {
+        id: 6,
+        nombre: "Mejores Juegos 2025",
+        descripcion: "¿Cuales son los mejores juegos de este año?",
+        temas: 1523,
+        mensajes: 7892,
+        icono: "gamepad"
     }
 ];
 
@@ -40,7 +57,11 @@ const usuariosJugando = [
     { nombre: "Naranja Camil", avatar: "NC", juego: "COD Black Ops 7" },
     { nombre: "Pedro2014", avatar: "SG", juego: "FIFA 25" },
     { nombre: "Gael11", avatar: "G1", juego: "Star Wars Eclipse" },
-    { nombre: "Marvelistasupremo", avatar: "MS", juego: "Marvel's Wolverine" }
+    { nombre: "Marvelistasupremo", avatar: "MS", juego: "Marvel's Wolverine" },
+    { nombre: "TheSteveN", avatar: "TS", juego: "PEAK" },
+    { nombre: "Cristian1928", avatar: "C1", juego: "PEAK" },
+    { nombre: "Jamon", avatar: "JM", juego: "FIFA 25" },
+    { nombre: "Kenny", avatar: "Kn", juego: "PEAK" }
 ];
 
 // Eventos gaming 2025
@@ -229,6 +250,84 @@ function configurarMenu() {
         });
     }
 }
+// Agregar esto al final de destacados.js (antes del DOMContentLoaded)
+function actualizarBotonUsuario() {
+    const btnLogin = document.getElementById('btnLogin');
+    const usuario = StorageManager.obtenerUsuario();
+    
+    if (btnLogin && usuario) {
+        btnLogin.innerHTML = `<i class="fas fa-user-check"></i> ${usuario.nombre}`;
+        btnLogin.classList.add('logueado');
+        btnLogin.onclick = null;
+        btnLogin.style.cursor = 'default';
+        
+        btnLogin.addEventListener('click', () => {
+            if (confirm(`¿Cerrar sesión de ${usuario.nombre}?`)) {
+                StorageManager.cerrarSesion();
+            }
+        });
+    }
+}
+
+// Y modificar la función configurarLogin() en destacados.js:
+// Busca la función configurarLogin() y REEMPLAZA las partes de formularios con:
+
+// FORMULARIO DE REGISTRO
+document.getElementById('formRegistro').addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const nombre = document.querySelector('#formRegistro input[type="text"]').value;
+    const email = document.querySelector('#formRegistro input[type="email"]').value;
+    
+    if (!nombre || !email) {
+        alert('Por favor completa todos los campos');
+        return;
+    }
+    
+    // Guardar usuario en localStorage
+    StorageManager.guardarUsuario(nombre, email);
+    
+    alert(`¡Bienvenido ${nombre}! Tu cuenta ha sido creada.`);
+    modalRegistro.style.display = 'none';
+    
+    // Actualizar botón con nombre de usuario
+    actualizarBotonUsuario();
+});
+
+// FORMULARIO DE LOGIN (VALIDAR QUE EXISTA REGISTRO)
+document.getElementById('formLogin').addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const usuario = StorageManager.obtenerUsuario();
+    
+    if (!usuario) {
+        alert('⚠️ Debes registrarte primero antes de iniciar sesión.');
+        modalLogin.style.display = 'none';
+        modalRegistro.style.display = 'flex';
+        return;
+    }
+    
+    const emailInput = document.querySelector('#formLogin input[type="email"]').value;
+    const passwordInput = document.querySelector('#formLogin input[type="password"]').value;
+    
+    // Validar credenciales (simplificado)
+    if (emailInput === usuario.email && passwordInput) {
+        alert(`¡Bienvenido de nuevo ${usuario.nombre}!`);
+        modalLogin.style.display = 'none';
+        
+        // Actualizar botón con nombre
+        actualizarBotonUsuario();
+    } else {
+        alert('Email o contraseña incorrectos');
+    }
+});
+
+// Luego en el DOMContentLoaded, agregar:
+document.addEventListener('DOMContentLoaded', () => {
+    // ... código existente ...
+    actualizarBotonUsuario(); // <-- AGREGAR ESTA LÍNEA
+});
+
 
 // Inicializar
 document.addEventListener('DOMContentLoaded', () => {
@@ -238,7 +337,5 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarPublicarHilo();
     configurarLogin();
     configurarMenu();
-    
-    console.log('Comunidad 2025 cargada correctamente!');
-
+      
 });
